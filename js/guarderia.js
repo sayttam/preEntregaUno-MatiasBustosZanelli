@@ -34,9 +34,10 @@ if (tamaño !== 1 && tamaño !== 2 && tamaño !== 3) {
     }
 }
 
-let dias = parseInt(prompt("Indica el numero de dias que nos acompañara en la guardería (de 10 a 19 días se aplica un descuento del 10% y 20 o mas días un 15%)"))
+let dias = parseInt(prompt("Indica el numero de dias que nos acompañara en la guardería, de 10 a 19 días se aplica un descuento del 10% y 20 o mas días un 15%)"))
 
 dias = Number(dias).toFixed(0)
+
 if (dias > 0 && dias < 10) {
     console.log("Cantidad de dias: ", dias)
     banderaDias = true
@@ -69,7 +70,8 @@ function mostrarPrecioDia(precioTotal) {
 
 if (banderaNombre == true && banderaTamaño == true && banderaDias == true) {
     mostrarPrecioDia(estadia)
-    console.log("Total de la estadia: ", calcularPrecioEstadia(dias))
+    console.log("Costo total de la estadia: ", calcularPrecioEstadia(dias))
+    alert("Costo total de la estadia: $" + calcularPrecioEstadia(dias))
 } else {
     console.error("No ha ingresado los datos correctamente para el presupuesto")
 }
