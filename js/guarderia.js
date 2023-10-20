@@ -2,9 +2,9 @@ let precioPorDia = 2000
 
 let banderaNombre = false
 let banderaTamaño = false
-let banderaDias = false
+let banderadias = false
 
-console.log("Bienvenido a nuestra guarderia canina")
+console.log("Bienvenido a nuestra guardería canina")
 
 let nombreCanino = prompt("Ingresa el nombre de tu canino:")
 
@@ -18,7 +18,7 @@ if (nombreCanino == "" || nombreCanino == null) {
 let tamaño = parseInt(prompt("Ingresa el número correspondiente al tamaño de tu mascota: 1 - Pequeño, 2 - Mediano, 3 - Grande"))
 
 if (tamaño !== 1 && tamaño !== 2 && tamaño !== 3) {
-    console.warn("Ingrese un numero de tamaño valido")
+    console.warn("Ingrese un número de tamaño valido")
 } else {
     if (tamaño === 1) {
         console.log("Tamaño pequeño")
@@ -34,24 +34,24 @@ if (tamaño !== 1 && tamaño !== 2 && tamaño !== 3) {
     }
 }
 
-let dias = parseInt(prompt("Indica el numero de dias que nos acompañara en la guardería, de 10 a 19 días se aplica un descuento del 10% y 20 o mas días un 15%)"))
+let dias = parseInt(prompt("Indica el numero de días que nos acompañara en la guardería, de 10 a 19 días se aplica un descuento del 10% y 20 o mas días un 15%)"))
 
 dias = Number(dias).toFixed(0)
 
 if (dias > 0 && dias < 10) {
     console.log("Cantidad de dias: ", dias)
-    banderaDias = true
+    banderadias = true
 }
 else if (dias >= 10 && dias < 20) {
     precioPorDia = precioPorDia * 0.9
-    console.log("Cantidad de dias: ", dias)
-    banderaDias = true
+    console.log("Cantidad de días: ", dias)
+    banderadias = true
 } else if (dias >= 20 && dias < 9999) {
     precioPorDia = precioPorDia * 0.85
-    console.log("Cantidad de dias: ", dias)
-    banderaDias = true
+    console.log("Cantidad de días: ", dias)
+    banderadias = true
 } else {
-    console.warn("Ingrese un numero de dias!")
+    console.warn("Ingrese un número de días!")
 }
 
 function calcularPrecioEstadia(diasEstadia) {
@@ -68,7 +68,7 @@ function mostrarPrecioDia(precioTotal) {
     }
 }
 
-if (banderaNombre == true && banderaTamaño == true && banderaDias == true) {
+if (banderaNombre == true && banderaTamaño == true && banderadias == true) {
     mostrarPrecioDia(estadia)
     console.log("Costo total de la estadia: ", calcularPrecioEstadia(dias))
     alert("Costo total de la estadia: $" + calcularPrecioEstadia(dias))
