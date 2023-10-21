@@ -53,6 +53,35 @@ else if (dias >= 10 && dias < 20) {
 } else {
     console.warn("Ingrese un número de días!")
 }
+if (banderaNombre == true) {
+    let cuidadosEspeciales = confirm(nombreCanino + " requiere cuidados especiales?")
+
+    let costoAdicionalEspeciales = 0
+
+    if (cuidadosEspeciales == true) {
+        let opcionSeleccionada = parseInt(prompt("Ingrese el número correspondiente: 1 - Medicación, 2 - Cuidados por discapacidad"));
+        switch (opcionSeleccionada) {
+            case 1:
+                costoAdicionalEspeciales = 1.1;
+                console.log("10% adicional por medicación")
+                break;
+            case 2:
+                costoAdicionalEspeciales = 1.25;
+                console.log("25% adicional por discapacidad")
+                break;
+            default:
+                costoAdicionalEspeciales = 1;
+                console.warn("No ha ingresado la opcion correcta")
+                break;
+        }
+
+        precioPorDia = precioPorDia * costoAdicionalEspeciales
+
+    } else {
+        console.log("Sin cuidados especiales")
+    }
+}
+
 
 function calcularPrecioEstadia(diasEstadia) {
     let estadia = precioPorDia * diasEstadia
@@ -64,7 +93,7 @@ estadia = calcularPrecioEstadia(dias)
 function mostrarPrecioDia(precioTotal) {
     console.log("El importe detallado es:")
     for (i = 1; i <= dias; i++) {
-        console.log(i + "° dia. Costo: ", (precioTotal / dias))
+        console.log(i + "° dia. Costo: ", (precioTotal / dias).toFixed(2))
     }
 }
 
